@@ -74,7 +74,7 @@ int diagnose(int grid[101][101]) {
 }
 
 int main() {
-    int grid[101][101];
+    int grid[101][101] = {0};
     int choice = -1;
     do {
         printf("What do you want to do?\n");
