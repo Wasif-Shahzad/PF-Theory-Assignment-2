@@ -23,10 +23,9 @@ void encodeMessage(char message[]) {
     }
     reverse(message);
     for(int i = 0; i < n; i++) {
-        if(message[i] == ' ') continue;
         int ascii = (int)message[i];
-        ascii ^= (1 << 2);
-        ascii ^= (1 << 5);
+        ascii ^= (1 << (2-1));
+        ascii ^= (1 << (5-1));
         message[i] = (char)ascii;
     }
 }
@@ -37,10 +36,9 @@ void decodeMessage(char message[]) {
         n++;
     }
     for(int i = 0; i < n; i++) {
-        if(message[i] == ' ') continue;
         int ascii = (int)message[i];
-        ascii ^= (1 << 5);
-        ascii ^= (1 << 2);
+        ascii ^= (1 << (5-1));
+        ascii ^= (1 << (2-1));
         message[i] = (char)ascii;
     }
     reverse(message);
